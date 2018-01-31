@@ -1,4 +1,4 @@
-# laravel-backpack-documents
+# LaravelBackpackDocuments
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
@@ -7,21 +7,7 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
-
-## Structure
-
-If any of the following are applicable to your project, then the directory structure should follow industry best practices by being named the following.
-
-```
-bin/        
-config/
-src/
-tests/
-vendor/
-```
-
+Ready to use Documents Backpack CRUD with API route for eg. privacy statement, imprint, sbt or gtc.
 
 ## Install
 
@@ -31,12 +17,34 @@ Via Composer
 $ composer require webfactor/laravel-backpack-documents
 ```
 
+Publish the vendor files
+
+``` bash
+$ php artisan vendor:publish --provider="Webfactor\LaravelBackpackDocuments\LaravelBackpackDocumentsServiceProvider"
+```
+
+Run the migration
+
+``` bash
+$ php artisan migrate
+```
+
+\[optional but recommended\] add a menu item to your `sidebar.blade.php`
+
+``` html
+<li><a href="{{ url(config('webfactor.documents.backend.route_prefix').'/'.config('webfactor.documents.backend.route') }}"><i class="fa fa-file-o"></i> <span>trans('webfactor::entity_name_plural')</span></a></li>
+```
+
 ## Usage
 
-``` php
-$skeleton = new Webfactor\LaravelBackpackDocuments();
-echo $skeleton->echoPhrase('Hello, League!');
-```
+### Backend
+Go to the defined route (default: wfcms/document) and edit your documents like in Backpack CRUD
+
+### Api
+Send a GET-request to the api route (default: api/v1/documents) with headers
+* Content-Type: application-json
+* Accept: application-json
+and get your documents array as JSON.
 
 ## Change log
 

@@ -7,7 +7,7 @@ return [
     'types' => [
         'imprint',
         'privacy',
-        'stc'
+        'sbt'
     ],
 
     // define the used body type.

@@ -14,6 +14,6 @@ return [
     'types' => [
         'imprint' => 'imprint',
         'privacy' => 'privacy',
-        'stc' => 'standard terms and conditions'
+        'sbt' => 'standard business terms'
     ]
 ];

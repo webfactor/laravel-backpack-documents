@@ -15,6 +15,6 @@ return [
     'types' => [
         'imprint' => 'Impressum',
         'privacy' => 'Datenschutz',
-        'stc' => 'Allgemeine Geschäftsbedingungen'
+        'sbt' => 'Allgemeine Geschäftsbedingungen'
     ]
 ];
