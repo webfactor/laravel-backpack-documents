@@ -37,14 +37,27 @@ $ php artisan migrate
 
 ## Usage
 
+Define your document types in the published config file.
+Don't forget to add appropriate translations in the translation files.
+
+
 ### Backend
+
 Go to the defined route (default: wfcms/document) and edit your documents like in Backpack CRUD
 
 ### Api
-Send a GET-request to the api route (default: api/v1/documents) with headers
-* Content-Type: application-json
-* Accept: application-json
-and get your documents array as JSON.
+
+Send a GET-request to the api route (default: api/v1/documents) with following headers and get your documents array as JSON.
+Headers:
+```
+Content-Type: application-json
+Accept: application-json
+```
+
+## Customisation
+
+You can edit many parts of the functionality. Just look at the published config file (`config/webfactor/documents.php`).
+If you want to overwrite the default routes, please create a route file at `routes/webfactor/documents.php` and define your routes there.
 
 ## Change log
 
