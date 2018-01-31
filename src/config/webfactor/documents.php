@@ -2,6 +2,24 @@
 
 return [
 
+    // define the possible document types
+    // each type can exist exactly one time in the database
+    'types' => [
+        'imprint',
+        'privacy',
+        'stc'
+    ],
+
+    // define the used body type.
+    // possible values are:
+    //  * plaintext
+    //      -> will show a default html textfield as input and store plain text to the database
+    //  * html
+    //      -> will present the summernote rich text editor and store styled html to the database
+    //  * md
+    //      -> will present the simplemde markdown editor and store markdown to the database
+    'body_type' => 'md',
+
     // the model to use with this package
     // keep in mind: when changing the model, you most likely need to change the Transformer also
     'model_class' => \Webfactor\LaravelBackpackDocuments\app\Http\Requests\app\Models\Document::class,

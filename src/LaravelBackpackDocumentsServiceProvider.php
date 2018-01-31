@@ -25,6 +25,8 @@ class LaravelBackpackDocumentsServiceProvider extends ServiceProvider
         // define the routes for the application
         $this->setupRoutes($this->app->router);
 
+        $this->loadTranslationsFrom(realpath(__DIR__.'/resources/lang'), 'webfactor');
+
         $this->mergeConfigFrom(
             __DIR__.'/config/webfactor/documents.php', 'webfactor.documents'
         );

@@ -4,6 +4,7 @@ namespace Webfactor\LaravelBackpackDocuments\app\Http\Controllers;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
+use Webfactor\LaravelBackpackDocuments\app\Http\Requests\app\Models\Document;
 use Webfactor\LaravelBackpackDocuments\app\Http\Requests\DocumentRequest as StoreRequest;
 use Webfactor\LaravelBackpackDocuments\app\Http\Requests\DocumentRequest as UpdateRequest;
 
@@ -17,8 +18,9 @@ class DocumentCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
         $this->crud->setModel(config('webfactor.documents.model_class'));
-        $this->crud->setRoute(config('webfactor.documents.backend.route_prefix') .'/'.config('webfactor.documents.backend.route'));
-        $this->crud->setEntityNameStrings(trans('webfactor:documents.document.singluar'), trans('webfactor:documents.document.plural'));
+        $this->crud->setRoute(config('webfactor.documents.backend.route_prefix').'/'.config('webfactor.documents.backend.route'));
+        $this->crud->setEntityNameStrings(trans('webfactor::documents.entity_name_singular'),
+            trans('webfactor::documents.entity_name_plural'));
 
         /*
         |--------------------------------------------------------------------------
@@ -26,11 +28,44 @@ class DocumentCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        $this->crud->setFromDb();
-
         // ------ CRUD FIELDS
 
+        $this->crud->addField([
+            'name'  => 'type',
+            'label' => 'Dokumentenart',
+            'type'  => 'select_from_array',
+            'options' => $this->getTypeOptions(),
+            'allows_null' => false,
+            'allows_multiple' => false
+        ]);
+
+        $this->crud->addField([
+            'name' => 'title',
+            'label' => trans('webfactor::documents.title')
+        ]);
+        
+        $this->crud->addField([
+            'name' => 'body',
+            'label' => trans('webfactor::documents.body'),
+            'type' => $this->bodyFieldType()
+        ]);
+
         // ------ CRUD COLUMNS
+
+        $this->crud->addColumns([
+            [
+                'name'  => 'type',
+                'label' => trans('webfactor::documents.type')
+            ],
+            [
+                'name'  => 'title',
+                'label' => trans('webfactor::documents.title')
+            ],
+            [
+                'name'  => 'body',
+                'label' => trans('webfactor::documents.body')
+            ]
+        ]);
 
         // ------ CRUD BUTTONS
 
@@ -48,6 +83,28 @@ class DocumentCrudController extends CrudController
 
         // ------ ADVANCED QUERIES
 
+    }
+
+    public function getTypeOptions()
+    {
+        $types = collect(config('webfactor.documents.types'));
+
+        return $types->mapWithKeys(function ($type) {
+           return [$type => trans('webfactor::documents.types.'.$type)];
+        });
+
+
+    }
+
+    public function bodyFieldType()
+    {
+        $types = [
+            'plaintext' => 'textarea',
+            'html' => 'summernote',
+            'md' => 'simplemde'
+        ];
+
+        return $types[config('webfactor.documents.body_type', 'plaintext')];
     }
 
     public function store(StoreRequest $request)
