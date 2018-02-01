@@ -4,9 +4,11 @@
     "description": "Ready to use Documents Backpack CRUD with API route for eg. privacy statement, imprint, sbt or gtc",
     "keywords": [
         "Webfactor",
-        "LaravelBackpackDocuments"
+        "Laravel",
+        "Backpack",
+        "Documents"
     ],
-    "homepage": "https://github.com/Webfactor/LaravelBackpackDocuments",
+    "homepage": "https://github.com/Webfactor/laravel-backpack-documents",
     "license": "MIT",
     "authors": [
         {
