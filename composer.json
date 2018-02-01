@@ -19,8 +19,6 @@
         }
     ],
     "require": {
-        "illuminate/support": "~5.1",
-        "php" : "~5.6|~7.0",
         "backpack/crud": "^3.3.0",
         "spatie/laravel-fractal": "^5.2",
         "webfactor/laravel-apicontroller": "^1.0"
