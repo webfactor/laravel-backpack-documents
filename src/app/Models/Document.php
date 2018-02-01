@@ -15,13 +15,11 @@ class Document extends Model
     |--------------------------------------------------------------------------
     */
 
-    //protected $table = 'documents';
-    //protected $primaryKey = 'id';
-    // public $timestamps = false;
-    // protected $guarded = ['id'];
-    // protected $fillable = [];
-    // protected $hidden = [];
-    // protected $dates = [];
+     protected $fillable = [
+         'type',
+         'title',
+         'body'
+     ];
 
     /*
     |--------------------------------------------------------------------------
