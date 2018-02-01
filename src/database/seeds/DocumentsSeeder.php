@@ -12,7 +12,7 @@ class DocumentsSeeder extends Seeder
     public function run()
     {
         collect(config('webfactor.documents.types'))->each(function ($type) {
-           factory(\Webfactor\LaravelBackpackDocuments\app\Http\Requests\app\Models\Document::class)->create([
+            factory(\Webfactor\LaravelBackpackDocuments\app\Http\Requests\app\Models\Document::class)->create([
                'type' => $type
            ]);
         });

@@ -82,7 +82,6 @@ class DocumentCrudController extends CrudController
         // ------ DATATABLE EXPORT BUTTONS
 
         // ------ ADVANCED QUERIES
-
     }
 
     public function getTypeOptions()
@@ -90,10 +89,8 @@ class DocumentCrudController extends CrudController
         $types = collect(config('webfactor.documents.types'));
 
         return $types->mapWithKeys(function ($type) {
-           return [$type => trans('webfactor::documents.types.'.$type)];
+            return [$type => trans('webfactor::documents.types.'.$type)];
         });
-
-
     }
 
     public function bodyFieldType()

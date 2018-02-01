@@ -12,6 +12,6 @@ Route::group([
 Route::group([
     'prefix' => config('webfactor.documents.api.route_prefix'),
     'middleware' => config('webfactor.documents.api.middleware')
-], function() {
+], function () {
     Route::get(config('webfactor.documents.api.route'), config('webfactor.documents.api.controller').'@index');
 });

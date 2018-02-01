@@ -9,13 +9,13 @@ class Document extends Model
 {
     use CrudTrait;
 
-     /*
+    /*
     |--------------------------------------------------------------------------
     | GLOBAL VARIABLES
     |--------------------------------------------------------------------------
     */
 
-     protected $fillable = [
+    protected $fillable = [
          'type',
          'title',
          'body'
