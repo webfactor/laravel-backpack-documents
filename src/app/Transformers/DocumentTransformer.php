@@ -7,11 +7,6 @@ use Webfactor\LaravelBackpackDocuments\app\Http\Requests\app\Models\Document;
 
 class DocumentTransformer extends TransformerAbstract
 {
-    /**
-     * A Fractal transformer.
-     *
-     * @return array
-     */
     public function transform(Document $document)
     {
         return [
