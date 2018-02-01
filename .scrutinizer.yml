@@ -25,6 +25,9 @@ tools:
             - tests
 build:
     tests:
+        before:
+            - 'composer self-update'
+            - 'composer update --no-interaction --prefer-source'
         override:
             -
                 command: 'vendor/bin/phpunit --coverage-clover coverage.clover'
