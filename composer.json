@@ -1,5 +1,5 @@
 {
-    "name": "Webfactor/LaravelBackpackDocuments",
+    "name": "webfactor/laravel-backpack-documents",
     "type": "library",
     "description": "Ready to use Documents Backpack CRUD with API route for eg. privacy statement, imprint, sbt or gtc",
     "keywords": [
@@ -8,7 +8,7 @@
         "Backpack",
         "Documents"
     ],
-    "homepage": "https://github.com/Webfactor/laravel-backpack-documents",
+    "homepage": "https://github.com/webfactor/laravel-backpack-documents",
     "license": "MIT",
     "authors": [
         {
