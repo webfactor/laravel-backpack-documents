@@ -1,6 +1,6 @@
 <?php
 
-namespace Webfactor\LaravelBackpackDocuments\app\Http\Controllers;
+namespace Webfactor\LaravelBackpackDocuments\Controllers;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 

@@ -22,16 +22,16 @@ return [
 
     // the model to use with this package
     // keep in mind: when changing the model, you most likely need to change the Transformer also
-    'model_class' => \Webfactor\LaravelBackpackDocuments\app\Http\Requests\app\Models\Document::class,
+    'model_class' => \Webfactor\LaravelBackpackDocuments\Models\Document::class,
 
     // the transformer class used to transform the model for api responses
-    'transformer_class' => \Webfactor\LaravelBackpackDocuments\app\Http\Requests\app\Transformers\DocumentTransformer::class,
+    'transformer_class' => \Webfactor\LaravelBackpackDocuments\Transformers\DocumentTransformer::class,
 
     // customize your backend parameters
     'backend' => [
 
         // the CRUD controller to be used
-        'controller' => Webfactor\LaravelBackpackDocuments\app\Http\Controllers\DocumentCrudController::class,
+        'controller' => Webfactor\LaravelBackpackDocuments\Controllers\DocumentCrudController::class,
 
         // the route prefix for the default routes
         'route_prefix' => 'wfcms',
@@ -47,7 +47,7 @@ return [
     'api' => [
 
         // the API controller to be used
-        'controller' => Webfactor\LaravelBackpackDocuments\app\Http\Controllers\DocumentApiController::class,
+        'controller' => Webfactor\LaravelBackpackDocuments\Controllers\DocumentApiController::class,
 
         // the route prefix for the default routes
         'route_prefix' => 'api/v1',

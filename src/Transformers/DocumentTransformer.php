@@ -1,9 +1,9 @@
 <?php
 
-namespace Webfactor\LaravelBackpackDocuments\app\Http\Requests\app\Transformers;
+namespace Webfactor\LaravelBackpackDocuments\Transformers;
 
 use League\Fractal\TransformerAbstract;
-use Webfactor\LaravelBackpackDocuments\app\Http\Requests\app\Models\Document;
+use Webfactor\LaravelBackpackDocuments\Models\Document;
 
 class DocumentTransformer extends TransformerAbstract
 {

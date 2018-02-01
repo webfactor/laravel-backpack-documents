@@ -13,7 +13,7 @@ class LaravelBackpackDocumentsServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public $routeFilePath = '/routes/webfactor/documents.php';
+    public $routeFilePath = '/../routes/webfactor/documents.php';
 
     /**
      * Perform post-registration booting of services.
@@ -25,10 +25,10 @@ class LaravelBackpackDocumentsServiceProvider extends ServiceProvider
         // define the routes for the application
         $this->setupRoutes($this->app->router);
 
-        $this->loadTranslationsFrom(realpath(__DIR__.'/resources/lang'), 'webfactor');
+        $this->loadTranslationsFrom(realpath(__DIR__.'/../resources/lang'), 'webfactor');
 
         $this->mergeConfigFrom(
-            __DIR__.'/config/webfactor/documents.php', 'webfactor.documents'
+            __DIR__.'/../config/webfactor/documents.php', 'webfactor.documents'
         );
 
         $this->publishFiles();
@@ -47,13 +47,19 @@ class LaravelBackpackDocumentsServiceProvider extends ServiceProvider
     public function publishFiles()
     {
         // publish config file
-        $this->publishes([__DIR__.'/config' => config_path()], 'config');
+        $this->publishes([__DIR__.'/../config' => config_path()], 'config');
 
         // publish lang files
-        $this->publishes([__DIR__.'/resources/lang' => resource_path('lang/vendor/webfactor')], 'lang');
+        $this->publishes([__DIR__.'/../resources/lang' => resource_path('lang/vendor/webfactor')], 'lang');
 
         // publish migrations
-        $this->publishes([__DIR__.'/database/migrations' => database_path('migrations')], 'migrations');
+        $this->publishes([__DIR__.'/../database/migrations' => database_path('migrations')], 'migrations');
+
+        // publish seeder
+        $this->publishes([__DIR__.'/../database/seeds' => database_path('seeds')], 'seeder');
+
+        // publish factory
+        $this->publishes([__DIR__.'/../database/factories' => database_path('factories')], 'factories');
     }
 
     /**

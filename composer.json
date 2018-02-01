@@ -29,7 +29,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Webfactor\\LaravelBackpackDocuments\\": "src"
+            "Webfactor\\LaravelBackpackDocuments\\": "src",
         }
     },
     "autoload-dev": {
