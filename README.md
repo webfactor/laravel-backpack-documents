@@ -79,6 +79,7 @@ If you discover any security related issues, please email oliver.ziegler@webfact
 
 ## Credits
 
+- [Webfactor][link-webfactor]
 - [Oliver Ziegler][link-author]
 - [All Contributors][link-contributors]
 
@@ -100,3 +101,4 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [link-downloads]: https://packagist.org/packages/webfactor/laravel-backpack-documents
 [link-author]: https://github.com/OliverZiegler
 [link-contributors]: ../../contributors
+[link-webfactor]: https://github.com/webfactor
