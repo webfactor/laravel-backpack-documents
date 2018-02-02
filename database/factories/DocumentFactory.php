@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(\Webfactor\LaravelBackpackDocuments\Models\Document::class, function (Faker $faker) {
+$factory->define(\Webfactor\Laravel\Backpack\Documents\Models\Document::class, function (Faker $faker) {
     return [
         'title' => $faker->words(3, true),
         'body' => $faker->text,

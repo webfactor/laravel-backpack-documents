@@ -1,6 +1,6 @@
 <?php
 
-namespace Webfactor\LaravelBackpackDocuments\Models;
+namespace Webfactor\Laravel\Backpack\Documents\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;

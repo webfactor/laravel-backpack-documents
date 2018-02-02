@@ -1,6 +1,6 @@
 <?php
 
-namespace Webfactor\LaravelBackpackDocuments\Requests;
+namespace Webfactor\Laravel\Backpack\Documents\Requests;
 
 use App\Http\Requests\Request;
 use Illuminate\Validation\Rule;

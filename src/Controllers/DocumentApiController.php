@@ -1,10 +1,10 @@
 <?php
 
-namespace Webfactor\LaravelBackpackDocuments\Controllers;
+namespace Webfactor\Laravel\Backpack\Documents\Controllers;
 
 use Spatie\Fractalistic\ArraySerializer;
 use Webfactor\Laravel\ApiController\ApiController;
-use Webfactor\LaravelBackpackDocuments\app\Http\Requests\app\Transformers\DocumentTransformer;
+use Webfactor\Laravel\Backpack\Documents\Transformers\DocumentTransformer;
 
 class DocumentApiController extends ApiController
 {

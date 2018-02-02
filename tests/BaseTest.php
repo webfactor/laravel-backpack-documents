@@ -1,5 +1,7 @@
 <?php
 
+namespace Webfactor\Laravel\Backpack\Documents\Test;
+
 use PHPUnit\Framework\TestCase as BaseTestCase;
 
 class BaseTest extends BaseTestCase

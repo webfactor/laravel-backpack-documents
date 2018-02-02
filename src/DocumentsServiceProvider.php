@@ -1,11 +1,11 @@
 <?php
 
-namespace Webfactor\LaravelBackpackDocuments;
+namespace Webfactor\Laravel\Backpack\Documents;
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 
-class LaravelBackpackDocumentsServiceProvider extends ServiceProvider
+class DocumentsServiceProvider extends ServiceProvider
 {
 
     /**

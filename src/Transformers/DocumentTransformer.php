@@ -1,6 +1,6 @@
 <?php
 
-namespace Webfactor\LaravelBackpackDocuments\Transformers;
+namespace Webfactor\Laravel\Backpack\Documents\Transformers;
 
 use League\Fractal\TransformerAbstract;
 use Webfactor\LaravelBackpackDocuments\Models\Document;
