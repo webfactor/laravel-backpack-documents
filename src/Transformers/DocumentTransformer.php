@@ -3,7 +3,7 @@
 namespace Webfactor\Laravel\Backpack\Documents\Transformers;
 
 use League\Fractal\TransformerAbstract;
-use Webfactor\LaravelBackpackDocuments\Models\Document;
+use Webfactor\Laravel\Backpack\Documents\Models\Document;
 
 class DocumentTransformer extends TransformerAbstract
 {

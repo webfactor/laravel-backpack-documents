@@ -20,7 +20,7 @@ $ composer require webfactor/laravel-backpack-documents
 Publish the vendor files
 
 ``` bash
-$ php artisan vendor:publish --provider="Webfactor\LaravelBackpackDocuments\LaravelBackpackDocumentsServiceProvider"
+$ php artisan vendor:publish --provider="Webfactor\Laravel\Backpack\Documents\LaravelBackpackDocumentsServiceProvider"
 ```
 
 Run the migration
