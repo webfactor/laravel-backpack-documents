@@ -20,7 +20,7 @@ $ composer require webfactor/laravel-backpack-documents
 Publish the vendor files
 
 ``` bash
-$ php artisan vendor:publish --provider="Webfactor\Laravel\Backpack\Documents\LaravelBackpackDocumentsServiceProvider"
+$ php artisan vendor:publish --provider="Webfactor\Laravel\Backpack\Documents\DocumentsServiceProvider"
 ```
 
 Run the migration
@@ -55,7 +55,6 @@ Go to the defined route (default: wfcms/document) and edit your documents like i
 Send a GET-request to the api route (default: api/v1/documents) with following headers and get your documents array as JSON.
 Headers:
 ```
-Content-Type: application-json
 Accept: application-json
 ```
 
