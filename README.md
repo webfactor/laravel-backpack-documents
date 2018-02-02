@@ -32,7 +32,12 @@ $ php artisan migrate
 \[optional but recommended\] add a menu item to your `sidebar.blade.php`
 
 ``` html
-<li><a href="{{ url(config('webfactor.documents.backend.route_prefix').'/'.config('webfactor.documents.backend.route') }}"><i class="fa fa-file-o"></i> <span>trans('webfactor::entity_name_plural')</span></a></li>
+<li>
+  <a href="{{ url(config('webfactor.documents.backend.route_prefix').'/'.config('webfactor.documents.backend.route')) }}">
+    <i class="fa fa-file-o"></i>
+    <span>{{  trans('webfactor::documents.entity_name_plural') }}</span>
+  </a>
+</li>
 ```
 
 ## Usage
