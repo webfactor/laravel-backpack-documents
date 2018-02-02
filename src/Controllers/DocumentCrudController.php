@@ -3,7 +3,6 @@
 namespace Webfactor\Laravel\Backpack\Documents\Controllers;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-
 use Webfactor\Laravel\Backpack\Documents\Requests\DocumentRequest as StoreRequest;
 use Webfactor\Laravel\Backpack\Documents\Requests\DocumentRequest as UpdateRequest;
 
@@ -53,8 +52,8 @@ class DocumentCrudController extends CrudController
 
         $this->crud->addColumns([
             [
-                'name'  => 'type',
-                'label' => trans('webfactor::documents.type')
+                'name'  => 'translated_type',
+                'label' => trans('webfactor::documents.type'),
             ],
             [
                 'name'  => 'title',
