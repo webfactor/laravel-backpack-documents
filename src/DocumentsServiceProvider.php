@@ -27,10 +27,6 @@ class DocumentsServiceProvider extends ServiceProvider
 
         $this->loadTranslationsFrom(realpath(__DIR__.'/../resources/lang'), 'webfactor');
 
-        $this->mergeConfigFrom(
-            __DIR__.'/../config/webfactor/documents.php', 'webfactor.documents'
-        );
-
         $this->publishFiles();
     }
 
@@ -41,7 +37,9 @@ class DocumentsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/webfactor/documents.php', 'webfactor.documents'
+        );
     }
 
     public function publishFiles()
