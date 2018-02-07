@@ -17,7 +17,7 @@ class DocumentApiController extends ApiController
      */
     public function index(Request $request)
     {
-        if($lang = $request->input('lang')) {
+        if ($lang = $request->input('lang')) {
             \App::setLocale($lang);
         }
 
