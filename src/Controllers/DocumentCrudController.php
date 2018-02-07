@@ -69,6 +69,14 @@ class DocumentCrudController extends CrudController
 
         // ------ CRUD ACCESS
 
+        collect(config('webfactor.documents.access', []))->each(function ($enabled, $key) {
+            if ($enabled) {
+                $this->crud->allowAccess($key);
+            } else {
+                $this->crud->denyAccess($key);
+            }
+        });
+
         // ------ CRUD REORDER
 
         // ------ CRUD DETAILS ROW
