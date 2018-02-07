@@ -3,6 +3,7 @@
 namespace Webfactor\Laravel\Backpack\Documents\Models;
 
 use Backpack\CRUD\CrudTrait;
+use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -26,6 +27,7 @@ use Illuminate\Database\Eloquent\Model;
 class Document extends Model
 {
     use CrudTrait;
+    use HasTranslations;
 
     /*
     |--------------------------------------------------------------------------
@@ -38,6 +40,11 @@ class Document extends Model
          'title',
          'body'
      ];
+
+    protected $translatable = [
+        'title',
+        'body'
+    ];
 
     /*
     |--------------------------------------------------------------------------
