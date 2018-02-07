@@ -20,3 +20,24 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ### Security
 - Nothing
+
+## 1.0.2 - 2018-02-07
+
+We changed the migration instead of providing a new one.
+Be sure to delete the old migration and publish the new one or just change the title column type from `string` to `text`.
+
+### Added
+- Translatable Document properties
+- CRUD-Access config values
+
+### Deprecated
+- Nothing
+
+### Fixed
+- Nothing
+
+### Removed
+- Nothing
+
+### Security
+- Nothing
