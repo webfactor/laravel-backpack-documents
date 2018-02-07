@@ -4,7 +4,7 @@ namespace Webfactor\Laravel\Backpack\Documents\Controllers;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Webfactor\Laravel\Backpack\Documents\Requests\DocumentRequest as StoreRequest;
-use Webfactor\Laravel\Backpack\Documents\Requests\DocumentRequest as UpdateRequest;
+use Webfactor\Laravel\Backpack\Documents\Requests\DocumentUpdateRequest as UpdateRequest;
 
 class DocumentCrudController extends CrudController
 {

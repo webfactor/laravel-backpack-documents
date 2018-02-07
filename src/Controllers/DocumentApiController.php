@@ -2,6 +2,7 @@
 
 namespace Webfactor\Laravel\Backpack\Documents\Controllers;
 
+use Illuminate\Http\Request;
 use Spatie\Fractalistic\ArraySerializer;
 use Webfactor\Laravel\ApiController\ApiController;
 use Webfactor\Laravel\Backpack\Documents\Transformers\DocumentTransformer;
@@ -14,8 +15,12 @@ class DocumentApiController extends ApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function index()
+    public function index(Request $request)
     {
+        if($lang = $request->input('lang')) {
+            \App::setLocale($lang);
+        }
+
         $model = config('webfactor.documents.model_class');
 
         $documents = $model::all();
