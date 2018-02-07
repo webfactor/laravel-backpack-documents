@@ -63,7 +63,10 @@ If you use translation you can append `lang` parameter to the api route to get t
 ## Customisation
 
 You can edit many parts of the functionality. Just look at the published config file (`config/webfactor/documents.php`).
+
 If you want to overwrite the default routes, please create a route file at `routes/webfactor/documents.php` and define your routes there.
+
+To change the fallback language please see [spatie/laravel-translatable][link-spatie-laravel-translatable] for more information.
 
 ## Change log
 
@@ -108,3 +111,4 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [link-author]: https://github.com/OliverZiegler
 [link-contributors]: ../../contributors
 [link-webfactor]: https://github.com/webfactor
+[link-spatie-laravel-translatable]: https://github.com/spatie/laravel-translatable
