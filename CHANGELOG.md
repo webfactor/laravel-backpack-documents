@@ -21,6 +21,23 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Security
 - Nothing
 
+## 1.0.3 - 2018-02-07
+
+### Added
+- append `lang` as parameter to the api route to get the right language
+
+### Deprecated
+- Nothing
+
+### Fixed
+- Nothing
+
+### Removed
+- Nothing
+
+### Security
+- Nothing
+
 ## 1.0.2 - 2018-02-07
 
 We changed the migration instead of providing a new one.

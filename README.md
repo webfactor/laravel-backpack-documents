@@ -58,6 +58,8 @@ Headers:
 Accept: application-json
 ```
 
+If you use translation you can append `lang` parameter to the api route to get the specified language. (eg. api/v1/documents?lang=de)
+
 ## Customisation
 
 You can edit many parts of the functionality. Just look at the published config file (`config/webfactor/documents.php`).
