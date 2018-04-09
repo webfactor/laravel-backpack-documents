@@ -13,7 +13,7 @@ class DocumentTransformer extends TransformerAbstract
             'type'      => $document->type,
             'title'     => $document->title,
             'body'      => $document->body,
-            'updatedAt' => $this->updated_at->toIso8601String()
+            'updatedAt' => $document->updated_at->toIso8601String()
         ];
     }
 }
