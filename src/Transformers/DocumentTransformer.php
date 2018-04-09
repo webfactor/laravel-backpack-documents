@@ -10,9 +10,10 @@ class DocumentTransformer extends TransformerAbstract
     public function transform(Document $document)
     {
         return [
-            'type' => $document->type,
-            'title' => $document->title,
-            'body' => $document->body
+            'type'      => $document->type,
+            'title'     => $document->title,
+            'body'      => $document->body,
+            'updatedAt' => $this->updated_at->toIso8601String()
         ];
     }
 }
