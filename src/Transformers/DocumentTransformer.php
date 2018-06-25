@@ -18,14 +18,15 @@ class DocumentTransformer extends TransformerAbstract
         ];
     }
 
-    public function includeBody(Document $document) {
+    public function includeBody(Document $document)
+    {
         $type = config('webfactor.documents.body_type');
         $options = config('webfactor.documents.transform_options.'.$type, []);
         $options = is_array($options)? $options : [$options];
 
         $body = $document->body;
 
-        foreach($options as $option) {
+        foreach ($options as $option) {
             $body = method_exists($this, $option) ? $this->{$option}($body) : $body;
         }
 
@@ -33,7 +34,8 @@ class DocumentTransformer extends TransformerAbstract
     }
 
     // body transformations
-    protected function single_line_breaks($body) {
+    protected function single_line_breaks($body)
+    {
         return str_replace("\r\n", "  \r\n", $body);
     }
 }
