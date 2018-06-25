@@ -21,7 +21,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Security
 - Nothing
 
-## 1.0.4 - 2018-06-25
+## 1.0.5 - 2018-06-25
 
 ### Added
 - config options for customizing fields
