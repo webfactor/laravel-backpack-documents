@@ -10,7 +10,7 @@ return [
         'sbt'
     ],
 
-    // define the access to the documents (see backpack for mor information)
+    // define the access to the documents (see backpack for more information)
     'access'            => [
         // can users list documents
         'list'   => true,
@@ -31,12 +31,29 @@ return [
     //      -> will present the simplemde markdown editor and store markdown to the database
     'body_type'         => 'md',
 
+    // define additional field options here (see backpack for more information on this)
+    'field_editor_attributes' => [
+        'plaintext' => [],
+        'html' => "",
+        'md' => "'renderingConfig': {'singleLineBreaks': true}"
+    ],
+
     // the model to use with this package
     // keep in mind: when changing the model, you most likely need to change the Transformer also
     'model_class'       => \Webfactor\Laravel\Backpack\Documents\Models\Document::class,
 
     // the transformer class used to transform the model for api responses
     'transformer_class' => \Webfactor\Laravel\Backpack\Documents\Transformers\DocumentTransformer::class,
+
+    // define some options for the transformer
+    // currently supported:
+    //  * md
+    //    -> single_line_breaks
+    'transform_options' => [
+        'md' => [
+            'single_line_breaks'
+        ]
+    ],
 
     // customize your backend parameters
     'backend'           => [

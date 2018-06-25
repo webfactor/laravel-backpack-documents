@@ -8,6 +8,21 @@ use Webfactor\Laravel\Backpack\Documents\Requests\DocumentUpdateRequest as Updat
 
 class DocumentCrudController extends CrudController
 {
+    protected $types = [
+        'plaintext' => [
+            'field' => 'textarea',
+            'attrLabel' => 'textareaAttributes'
+        ],
+        'html'      => [
+            'field' => 'summernote',
+            'attrLabel' => 'options'
+        ],
+        'md'        => [
+            'field' => 'simplemde',
+            'attrLabel' => 'simplemdeAttributesRaw'
+        ],
+    ];
+
     public function setup()
     {
         /*
@@ -16,7 +31,7 @@ class DocumentCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
         $this->crud->setModel(config('webfactor.documents.model_class'));
-        $this->crud->setRoute(config('webfactor.documents.backend.route_prefix').'/'.config('webfactor.documents.backend.route'));
+        $this->crud->setRoute(config('webfactor.documents.backend.route_prefix') . '/' . config('webfactor.documents.backend.route'));
         $this->crud->setEntityNameStrings(trans('webfactor::documents.entity_name_singular'),
             trans('webfactor::documents.entity_name_plural'));
 
@@ -29,23 +44,24 @@ class DocumentCrudController extends CrudController
         // ------ CRUD FIELDS
 
         $this->crud->addField([
-            'name'  => 'type',
-            'label' => 'Dokumentenart',
-            'type'  => 'select_from_array',
-            'options' => $this->getTypeOptions(),
-            'allows_null' => false,
-            'allows_multiple' => false
+            'name'            => 'type',
+            'label'           => 'Dokumentenart',
+            'type'            => 'select_from_array',
+            'options'         => $this->getTypeOptions(),
+            'allows_null'     => false,
+            'allows_multiple' => false,
         ]);
 
         $this->crud->addField([
-            'name' => 'title',
-            'label' => trans('webfactor::documents.title')
+            'name'  => 'title',
+            'label' => trans('webfactor::documents.title'),
         ]);
-        
+
         $this->crud->addField([
-            'name' => 'body',
-            'label' => trans('webfactor::documents.body'),
-            'type' => $this->bodyFieldType()
+            'name'                            => 'body',
+            'label'                           => trans('webfactor::documents.body'),
+            'type'                            => $this->bodyFieldType(),
+            $this->bodyFieldAttributesLabel() => $this->bodyFieldAttributes(),
         ]);
 
         // ------ CRUD COLUMNS
@@ -57,12 +73,12 @@ class DocumentCrudController extends CrudController
             ],
             [
                 'name'  => 'title',
-                'label' => trans('webfactor::documents.title')
+                'label' => trans('webfactor::documents.title'),
             ],
             [
                 'name'  => 'body',
-                'label' => trans('webfactor::documents.body')
-            ]
+                'label' => trans('webfactor::documents.body'),
+            ],
         ]);
 
         // ------ CRUD BUTTONS
@@ -95,19 +111,24 @@ class DocumentCrudController extends CrudController
         $types = collect(config('webfactor.documents.types'));
 
         return $types->mapWithKeys(function ($type) {
-            return [$type => trans('webfactor::documents.types.'.$type)];
+            return [$type => trans('webfactor::documents.types.' . $type)];
         });
     }
 
     public function bodyFieldType()
     {
-        $types = [
-            'plaintext' => 'textarea',
-            'html' => 'summernote',
-            'md' => 'simplemde'
-        ];
+        return $this->types[config('webfactor.documents.body_type', 'plaintext')]['field'];
+    }
 
-        return $types[config('webfactor.documents.body_type', 'plaintext')];
+    public function bodyFieldAttributesLabel()
+    {
+        return $this->types[config('webfactor.documents.body_type', 'plaintext')]['attrLabel'];
+    }
+
+    public function bodyFieldAttributes()
+    {
+        $type = config('webfactor.documents.body_type', 'plaintext');
+        return config('webfactor.documents.field_editor_attributes.'.$type, []);
     }
 
     public function store(StoreRequest $request)
