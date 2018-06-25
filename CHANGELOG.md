@@ -21,22 +21,19 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Security
 - Nothing
 
+## 1.0.4 - 2018-06-25
+
+### Added
+- config options for customizing fields
+- config option for singleLineBreaks in md
+
+### Fixed
+- merge config from vendor folder
+
 ## 1.0.3 - 2018-02-07
 
 ### Added
 - append `lang` as parameter to the api route to get the right language
-
-### Deprecated
-- Nothing
-
-### Fixed
-- Nothing
-
-### Removed
-- Nothing
-
-### Security
-- Nothing
 
 ## 1.0.2 - 2018-02-07
 
@@ -46,15 +43,3 @@ Be sure to delete the old migration and publish the new one or just change the t
 ### Added
 - Translatable Document properties
 - CRUD-Access config values
-
-### Deprecated
-- Nothing
-
-### Fixed
-- Nothing
-
-### Removed
-- Nothing
-
-### Security
-- Nothing
