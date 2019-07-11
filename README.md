@@ -52,11 +52,7 @@ Go to the defined route (default: wfcms/document) and edit your documents like i
 
 ### Api
 
-Send a GET-request to the api route (default: api/v1/documents) with following headers and get your documents array as JSON.
-Headers:
-```
-Accept: application-json
-```
+Send a GET-request to the api route (default: api/v1/documents).
 
 If you use translation you can append `lang` parameter to the api route to get the specified language. (eg. api/v1/documents?lang=de)
 
@@ -66,7 +62,7 @@ You can edit many parts of the functionality. Just look at the published config 
 
 If you want to overwrite the default routes, please create a route file at `routes/webfactor/documents.php` and define your routes there.
 
-To change the fallback language please see [spatie/laravel-translatable][link-spatie-laravel-translatable] for more information.
+For using translations check the installed version of [spatie/laravel-translatable][link-spatie-laravel-translatable] for more information. 
 
 ## Change log
 
