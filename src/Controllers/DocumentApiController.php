@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Spatie\Fractalistic\ArraySerializer;
 
-class DocumentApiController extends Controller
+class DocumentApiController
 {
     /**
      * Get all documents and return the json response
