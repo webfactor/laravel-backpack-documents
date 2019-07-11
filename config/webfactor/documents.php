@@ -77,6 +77,8 @@ return [
         // the API controller to be used
         'controller'   => Webfactor\Laravel\Backpack\Documents\Controllers\DocumentApiController::class,
 
+        'transformer' => \Webfactor\Laravel\Backpack\Documents\Transformers\DocumentTransformer::class,
+
         // the route prefix for the default routes
         'route_prefix' => 'api/v1',
 
@@ -84,7 +86,6 @@ return [
         'route'        => 'documents',
 
         // the midlewares to use
-        'middleware'   => ['apiv1']
+        'middleware'   => []
     ]
-
 ];

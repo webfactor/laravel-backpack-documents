@@ -2,14 +2,12 @@
 
 namespace Webfactor\Laravel\Backpack\Documents\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Spatie\Fractalistic\ArraySerializer;
-use Webfactor\Laravel\ApiController\ApiController;
-use Webfactor\Laravel\Backpack\Documents\Transformers\DocumentTransformer;
 
-class DocumentApiController extends ApiController
+class DocumentApiController extends Controller
 {
-
     /**
      * Get all documents and return the json response
      *
@@ -26,11 +24,11 @@ class DocumentApiController extends ApiController
         $documents = $model::all();
 
         if (!$documents || !$documents->count()) {
-            return $this->respondNoEntries();
+            abort(422);
         }
 
-        return $this->setResponsePayload([
-            'documents' => fractal($documents, new DocumentTransformer(), new ArraySerializer())
-        ])->respondWithSuccess();
+        $transformerClass = config('webfactor.documents.api.transformer');
+
+        return fractal($documents, new $transformerClass(), new ArraySerializer());
     }
 }
