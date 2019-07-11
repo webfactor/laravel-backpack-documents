@@ -21,6 +21,19 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Security
 - Nothing
 
+## 2.0.0 - 2019-07-11
+
+### Added
+- config option to switch transformer
+- compatibility with L5.8 
+- use backpack_auth() in DocumentRequest
+
+### Removed
+- default config value for middleware
+- dependency on webfactor/laravel-apicontroller
+- Support for backpack/crud prior 3.5
+
+
 ## 1.0.5 - 2018-06-25
 
 ### Added

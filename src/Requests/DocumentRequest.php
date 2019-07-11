@@ -3,9 +3,10 @@
 namespace Webfactor\Laravel\Backpack\Documents\Requests;
 
 use App\Http\Requests\Request;
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class DocumentRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
+class DocumentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -15,7 +16,7 @@ class DocumentRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     public function authorize()
     {
         // only allow updates if the user is logged in
-        return \Auth::check();
+        return backpack_auth()->check();
     }
 
     /**

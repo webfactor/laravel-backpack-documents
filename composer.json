@@ -19,7 +19,7 @@
         }
     ],
     "require": {
-        "backpack/crud": "^3.3.0",
+        "backpack/crud": "^3.5.0",
         "spatie/laravel-fractal": "^5.2",
         "spatie/laravel-translatable": "^2 || ^3 || ^4"
     },
